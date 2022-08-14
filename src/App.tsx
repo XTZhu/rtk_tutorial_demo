@@ -1,18 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Counter } from "./features/counter/Counter";
+import "./App.css";
+import { Outlet, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
+        {/* <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
+        </p> */}
+        {/* <span>
           <span>Learn </span>
           <a
             className="App-link"
@@ -49,8 +50,13 @@ function App() {
           >
             React Redux
           </a>
-        </span>
+        </span> */}
       </header>
+      <nav>
+        <Link to="/home">Home</Link> | <Link to="/bookDetail">bookDetail</Link>{" "}
+        | <Link to="/bookList">bookList</Link>
+      </nav>
+      <Outlet />
     </div>
   );
 }
